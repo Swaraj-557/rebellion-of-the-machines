@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://nwxrx6x0k7qj"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_8q0qj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x3mx"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y4ny"]
+size = Vector2(80, 80)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(500, 300)
+script = ExtResource("1_8q0qj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_1x3mx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+modulate = Color(0, 0.8, 1, 1)
+texture = preload("res://icon.svg")
+scale = Vector2(0.25, 0.375)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+enabled = true
+
+[node name="InteractionArea" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/InteractionArea"]
+shape = SubResource("RectangleShape2D_2y4ny")
+
+[node name="Instructions" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 500.0
+offset_bottom = 150.0
+text = "REBELLION OF THE MACHINES
+WASD: Move
+Shift: Stealth Mode
+E: Interact
+
+Move around with the blue player character!"

@@ -15,6 +15,7 @@ config/description="A puzzle-adventure game for Hack Club's Shiba Arcade competi
 config/version="0.1.0"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+run/main_scene="res://scenes/Main.tscn"
 
 [display]
 
